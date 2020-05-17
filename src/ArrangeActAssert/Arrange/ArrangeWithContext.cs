@@ -18,8 +18,8 @@ namespace ArrangeActAssert.Arrange
 
         public IAct Arrange(Action<IContext> actionToInvoke)
         {
-            throw new NotImplementedException();
-
+            _runner.AddArrange(new ArrangeTestStep(_context, actionToInvoke));
+            return new ActWithContext(_context, _runner);
         }
     }
 }

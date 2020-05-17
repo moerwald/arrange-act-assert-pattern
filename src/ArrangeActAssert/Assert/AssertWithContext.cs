@@ -18,7 +18,7 @@ namespace ArrangeActAssert.Assert
 
         public ITestRunner Assert(Action<IContext> context)
         {
-            throw new NotImplementedException();
+            return _runner;
         }
     }
 }

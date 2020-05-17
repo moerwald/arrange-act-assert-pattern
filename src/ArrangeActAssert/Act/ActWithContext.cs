@@ -18,7 +18,7 @@ namespace ArrangeActAssert.Act
 
         public IAssert Act(Action<IContext> action)
         {
-            throw new NotImplementedException();
+            return new AssertWithContext(_context, _runner);
         }
 
     }
