@@ -4,7 +4,7 @@ using System;
 
 namespace ArrangeActAssert.Asrt
 {
-    public class AssertWithContext : IAssert
+    public sealed class AssertWithContext : IAssert
     {
         private readonly IContext _context;
         private readonly ITestStepRunner _runner;

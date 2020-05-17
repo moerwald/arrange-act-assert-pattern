@@ -3,7 +3,7 @@
 namespace ArrangeActAssert.Tests.TestStepRunner
 {
     [TestFixture]
-    class DefaultTestStepRunnerTest
+    public sealed class DefaultTestStepRunnerTest
     {
 
         [Test]

@@ -5,7 +5,7 @@ using System;
 namespace ArrangeActAssert.Tests.Arrange
 {
     [TestFixture]
-    public class ArrangeTests
+    public sealed class ArrangeTests
     {
         [Test]
         public void Arrange_ExceptionIsThrown_ExceptionRethrownAsArrangeException()

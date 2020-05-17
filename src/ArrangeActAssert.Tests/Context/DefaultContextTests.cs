@@ -5,7 +5,7 @@ using System;
 namespace ArrangeActAssert.Tests.Context
 {
     [TestFixture]
-    public class DefaultContextTests
+    public sealed class DefaultContextTests
     {
         [Test]
         public void Add_InputIsValid_DontThrowException()

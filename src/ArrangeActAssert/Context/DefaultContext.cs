@@ -3,7 +3,7 @@ using System;
 
 namespace ArrangeActAssert.Context
 {
-    public class DefaultContext  : IContext
+    public sealed class DefaultContext  : IContext
     {
         Dictionary<string, (object, Type)> _parameters = new Dictionary<string, (object, Type)>();
 
