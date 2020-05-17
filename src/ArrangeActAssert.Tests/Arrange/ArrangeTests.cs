@@ -22,5 +22,18 @@ namespace ArrangeActAssert.Tests.Arrange
                             );
         }
 
+        [Test]
+        public void Arrange_NoError_ActionWasInvoked()
+        {
+            var arrangeStepCalled = false;
+            Pattern.New
+                    .Arrange(c => arrangeStepCalled = true)
+                    .Act(x => { })
+                    .Assert(x => { })
+                    .Invoke();
+
+            NUnit.Framework.Assert.IsTrue(arrangeStepCalled);
+        }
+
     }
 }
