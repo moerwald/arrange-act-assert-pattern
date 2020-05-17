@@ -1,8 +1,6 @@
 ﻿using ArrangeActAssert.Context;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArrangeActAssert.Tests.Context
 {

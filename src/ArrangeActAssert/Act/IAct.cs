@@ -1,8 +1,6 @@
 ﻿using ArrangeActAssert.Asrt;
 using ArrangeActAssert.Context;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArrangeActAssert.Act
 {

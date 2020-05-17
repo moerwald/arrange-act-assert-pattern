@@ -1,5 +1,4 @@
-﻿using ArrangeActAssert.Arrange.Result;
-using ArrangeActAssert.Context;
+﻿using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
 using System;
 
