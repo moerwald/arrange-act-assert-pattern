@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ArrangeActAssert.Test
 {
-    public class DefaultTestRunner : ITestRunner
+    public class DefaultTestStepRunner : ITestStepRunner
     {
         List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
 

@@ -8,9 +8,9 @@ namespace ArrangeActAssert.Act
     public class ActWithContext : IAct
     {
         private readonly IContext _context;
-        private readonly ITestRunner _runner;
+        private readonly ITestStepRunner _runner;
 
-        public ActWithContext(IContext context, ITestRunner runner)
+        public ActWithContext(IContext context, ITestStepRunner runner)
         {
             _context = context;
             _runner = runner;

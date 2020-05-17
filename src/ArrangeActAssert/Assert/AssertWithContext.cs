@@ -7,16 +7,16 @@ namespace ArrangeActAssert.Asrt
     public class AssertWithContext : IAssert
     {
         private readonly IContext _context;
-        private readonly ITestRunner _runner;
+        private readonly ITestStepRunner _runner;
 
-        public AssertWithContext(IContext context, ITestRunner runner)
+        public AssertWithContext(IContext context, ITestStepRunner runner)
         {
             _context = context;
             _runner = runner;
         }
 
 
-        public ITestRunner Assert(Action<IContext> context)
+        public ITestStepRunner Assert(Action<IContext> context)
         {
             return _runner;
         }

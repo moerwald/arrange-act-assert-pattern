@@ -8,9 +8,9 @@ namespace ArrangeActAssert.Arrange
     internal class ArrangeWithContext : IArrange
     {
         private IContext _context;
-        private readonly ITestRunner _runner;
+        private readonly ITestStepRunner _runner;
 
-        public ArrangeWithContext(IContext context, ITestRunner runner)
+        public ArrangeWithContext(IContext context, ITestStepRunner runner)
         {
             _context = context;
             _runner = runner;

@@ -8,6 +8,6 @@ namespace ArrangeActAssert.Asrt
 {
     public interface IAssert
     {
-        ITestRunner Assert(Action<IContext> context);
+        ITestStepRunner Assert(Action<IContext> context);
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ArrangeActAssert.Test
 {
-    public interface ITestRunner
+    public interface ITestStepRunner
     {
        void Invoke();
         void AddArrange(ArrangeTestStep arrangeTestStep);
