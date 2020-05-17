@@ -16,9 +16,20 @@ namespace ArrangeActAssert.Context
             _parameters[name] = (value, typeof(T));
         }
 
-        public T Get<T>(string v)
+        public T Get<T>(string name)
         {
-            throw new System.NotImplementedException();
+            if (_parameters.ContainsKey(name) == false)
+            {
+                throw new ArgumentException($"{name} not found");
+            }
+
+            (object value, Type type) = _parameters[name];
+            if (type != typeof(T))
+            {
+                throw new InvalidCastException($"Store parameter type {type} doesn't match to generic type {typeof(T)}");
+            }
+
+            return (T)value;
         }
     }
 }
