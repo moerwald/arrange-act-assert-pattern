@@ -1,4 +1,4 @@
-﻿using ArrangeActAssert.Assert;
+﻿using ArrangeActAssert.Asrt;
 using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
 using System;

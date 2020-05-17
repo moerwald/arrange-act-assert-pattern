@@ -28,7 +28,7 @@ namespace ArrangeActAssert.Tests
                 ctx => 
                 {
                     int a = ctx.Get<int>("a");
-                    NUnit.Framework.Assert.AreEqual(2, a);
+                    Assert.AreEqual(2, a);
                 }
                 )
                 .Invoke();

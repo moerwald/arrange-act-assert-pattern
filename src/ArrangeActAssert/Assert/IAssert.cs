@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArrangeActAssert.Assert
+namespace ArrangeActAssert.Asrt
 {
     public interface IAssert
     {

@@ -2,7 +2,7 @@
 using ArrangeActAssert.Test;
 using System;
 
-namespace ArrangeActAssert.Assert
+namespace ArrangeActAssert.Asrt
 {
     public class AssertWithContext : IAssert
     {

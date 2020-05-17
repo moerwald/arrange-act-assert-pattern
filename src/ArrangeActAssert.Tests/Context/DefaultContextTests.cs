@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using NUnitAssert = NUnit.Framework.Assert;
-
 namespace ArrangeActAssert.Tests.Context
 {
     [TestFixture]
@@ -15,7 +13,13 @@ namespace ArrangeActAssert.Tests.Context
         public void Add_InputIsValid_DontThrowException()
         {
             var ctx = new DefaultContext();
-            NUnitAssert.DoesNotThrow(() => ctx.Add("someName", 1));
+            Assert.DoesNotThrow(() => ctx.Add("someName", 1));
+        }
+
+        [Test]
+        public void Get_ParmeterNotFound_InvalidArgumentException()
+        {
+            var ctx = new DefaultContext();
         }
     }
 }

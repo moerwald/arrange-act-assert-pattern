@@ -12,7 +12,7 @@ namespace ArrangeActAssert.Tests.Arrange
         [Test]
         public void Arrange_ExceptionIsThrown_ExceptionRethrownAsArrangeException()
         {
-            NUnit.Framework.Assert.Throws<ArrangeException>(
+            Assert.Throws<ArrangeException>(
                 () =>
                     Pattern.New
                             .Arrange(c => throw new Exception("Arrange failed"))
@@ -32,7 +32,7 @@ namespace ArrangeActAssert.Tests.Arrange
                     .Assert(x => { })
                     .Invoke();
 
-            NUnit.Framework.Assert.IsTrue(arrangeStepCalled);
+            Assert.IsTrue(arrangeStepCalled);
         }
 
     }
