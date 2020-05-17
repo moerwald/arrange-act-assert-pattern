@@ -6,7 +6,7 @@ namespace ArrangeActAssert.Context
 {
     public interface IContext
     {
-        void Add<T>(string v, T a);
-        T Get<T>(string v);
+        void Add<T>(string name, T value);
+        T Get<T>(string name);
     }
 }

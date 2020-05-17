@@ -5,6 +5,6 @@ namespace ArrangeActAssert
 {
     public static class Pattern
     {
-        public static IArrange New => new ArrangeWithContext(new Context.Context(), new DefaultTestRunner());
+        public static IArrange New => new ArrangeWithContext(new Context.DefaultContext(), new DefaultTestRunner());
     }
 }
