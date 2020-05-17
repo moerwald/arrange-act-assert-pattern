@@ -5,7 +5,7 @@ using System;
 
 namespace ArrangeActAssert.Act
 {
-    public class ActWithContext : IAct
+    public sealed class ActWithContext : IAct
     {
         private readonly IContext _context;
         private readonly ITestStepRunner _runner;
