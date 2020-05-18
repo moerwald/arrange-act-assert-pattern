@@ -18,8 +18,8 @@ namespace ArrangeActAssert.Act
 
         public IAssert Act(Action<IContext> action)
         {
+            _runner.AddAct(new ActTestStep(_context, action));
             return new AssertWithContext(_context, _runner);
         }
-
     }
 }
