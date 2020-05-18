@@ -1,5 +1,6 @@
 ﻿using ArrangeActAssert.Act;
 using ArrangeActAssert.Arrange;
+using ArrangeActAssert.Asrt;
 using System;
 using System.Collections.Generic;
 
@@ -10,6 +11,7 @@ namespace ArrangeActAssert.Test
         List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
 
         List<ActTestStep> _actTestSteps = new List<ActTestStep>();
+        List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
 
         public void AddAct(ActTestStep actTestStep)
         {
@@ -19,6 +21,11 @@ namespace ArrangeActAssert.Test
         public void AddArrange(ArrangeTestStep arrangeTestStep)
         {
             _arrangeTestSteps.Add(arrangeTestStep);
+        }
+
+        public void AddAssert(AssertTestStep assertTestStep)
+        {
+            _assertTestSteps.Add(assertTestStep);
         }
 
         public void Invoke()

@@ -1,5 +1,6 @@
 ﻿using ArrangeActAssert.Act;
 using ArrangeActAssert.Arrange;
+using ArrangeActAssert.Asrt;
 
 namespace ArrangeActAssert.Test
 {
@@ -8,5 +9,6 @@ namespace ArrangeActAssert.Test
         void Invoke();
         void AddArrange(ArrangeTestStep arrangeTestStep);
         void AddAct(ActTestStep actTestStep);
+        void AddAssert(AssertTestStep assertTestStep);
     }
 }
