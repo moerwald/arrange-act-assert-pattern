@@ -32,6 +32,7 @@ namespace ArrangeActAssert.Test
         {
             InvokeSteps(_arrangeTestSteps);
             InvokeSteps(_actTestSteps);
+            InvokeSteps(_assertTestSteps);
         }
 
         private void InvokeSteps<T>(IEnumerable<T> steps) where T : IInvokeableTestStep
