@@ -1,7 +1,6 @@
 ﻿using ArrangeActAssert.Act;
 using ArrangeActAssert.Arrange;
 using ArrangeActAssert.Asrt;
-using System;
 using System.Collections.Generic;
 
 namespace ArrangeActAssert.Test
@@ -13,20 +12,11 @@ namespace ArrangeActAssert.Test
         List<ActTestStep> _actTestSteps = new List<ActTestStep>();
         List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
 
-        public void AddAct(ActTestStep actTestStep)
-        {
-            _actTestSteps.Add(actTestStep);
-        }
+        public void AddAct(ActTestStep actTestStep) => _actTestSteps.Add(actTestStep);
 
-        public void AddArrange(ArrangeTestStep arrangeTestStep)
-        {
-            _arrangeTestSteps.Add(arrangeTestStep);
-        }
+        public void AddArrange(ArrangeTestStep arrangeTestStep) => _arrangeTestSteps.Add(arrangeTestStep);
 
-        public void AddAssert(AssertTestStep assertTestStep)
-        {
-            _assertTestSteps.Add(assertTestStep);
-        }
+        public void AddAssert(AssertTestStep assertTestStep) => _assertTestSteps.Add(assertTestStep);
 
         public void Invoke()
         {
@@ -41,7 +31,6 @@ namespace ArrangeActAssert.Test
             {
                 step.Invoke();
             }
-
         }
     }
 }
