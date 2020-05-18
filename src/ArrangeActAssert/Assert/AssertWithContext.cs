@@ -16,8 +16,9 @@ namespace ArrangeActAssert.Asrt
         }
 
 
-        public ITestStepRunner Assert(Action<IContext> context)
+        public ITestStepRunner Assert(Action<IContext> action)
         {
+            _runner.AddAssert(new AssertTestStep(_context, action));
             return _runner;
         }
     }
