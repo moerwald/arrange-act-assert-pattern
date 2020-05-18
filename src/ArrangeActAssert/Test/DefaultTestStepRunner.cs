@@ -7,10 +7,9 @@ namespace ArrangeActAssert.Test
 {
     public sealed class DefaultTestStepRunner : ITestStepRunner
     {
-        List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
-
-        List<ActTestStep> _actTestSteps = new List<ActTestStep>();
-        List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
+        readonly List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
+        readonly List<ActTestStep> _actTestSteps = new List<ActTestStep>();
+        readonly List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
 
         public void AddAct(ActTestStep actTestStep) => _actTestSteps.Add(actTestStep);
 
