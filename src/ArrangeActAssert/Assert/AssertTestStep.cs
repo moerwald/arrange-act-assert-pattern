@@ -3,7 +3,7 @@ using System;
 
 namespace ArrangeActAssert.Asrt
 {
-    public class AssertTestStep : TestStepBase<AssertException>
+    public sealed class AssertTestStep : TestStepBase<AssertException>
     {
         public AssertTestStep(IContext context, Action<IContext> action)
             :base(context, action)

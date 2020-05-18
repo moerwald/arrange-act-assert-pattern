@@ -3,7 +3,7 @@
 namespace ArrangeActAssert.Asrt
 {
     [Serializable]
-    public class AssertException : Exception
+    public sealed class AssertException : Exception
     {
         public AssertException() { }
         public AssertException(string message) : base(message) { }
