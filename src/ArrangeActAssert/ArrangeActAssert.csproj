@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageProjectUrl>https://github.com/moerwald/arrange-act-assert-pattern</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/moerwald/arrange-act-assert-pattern</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
