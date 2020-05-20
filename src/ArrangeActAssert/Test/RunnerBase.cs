@@ -9,9 +9,9 @@ namespace ArrangeActAssert.Test
 {
     public abstract class RunnerBase : ITestStepRunner
     {
-        private readonly List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
-        private readonly List<ActTestStep> _actTestSteps = new List<ActTestStep>();
-        private readonly List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
+        protected readonly List<ArrangeTestStep> _arrangeTestSteps = new List<ArrangeTestStep>();
+        protected readonly List<ActTestStep> _actTestSteps = new List<ActTestStep>();
+        protected readonly List<AssertTestStep> _assertTestSteps = new List<AssertTestStep>();
 
         public void AddAct(ActTestStep actTestStep) => _actTestSteps.Add(actTestStep);
 

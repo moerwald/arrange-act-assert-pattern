@@ -1,6 +1,7 @@
 ﻿using ArrangeActAssert.Act;
 using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
+using LanguageExt;
 using System;
 
 namespace ArrangeActAssert.Arrange
@@ -18,7 +19,7 @@ namespace ArrangeActAssert.Arrange
 
         public IAct Arrange(Action<IContext> actionToInvoke)
         {
-            _runner.AddArrange(new ArrangeTestStep(_context, actionToInvoke));
+            _runner.AddArrange(new ArrangeTestStep(_context, actionToInvoke, Option<string>.None));
             return new ActWithContext(_context, _runner);
         }
     }

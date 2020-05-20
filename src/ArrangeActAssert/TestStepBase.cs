@@ -31,5 +31,6 @@ namespace ArrangeActAssert
         }
 
         protected abstract TException GetException(Exception innerException);
+        public abstract string GetDescription();
     }
 }
