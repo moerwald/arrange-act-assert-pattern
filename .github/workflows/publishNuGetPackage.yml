@@ -2,7 +2,8 @@ name: publish to nuget
 on:
   push:
     branches:
-      - release/1.x.x # Default release branch
+      #- release/1.x.x # Default release branch
+        - master
 jobs:
   publish:
     name: build, pack & push
@@ -21,9 +22,9 @@ jobs:
       - name: publish on version change
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: src/Conditions/Conditions.csproj
+          PROJECT_FILE_PATH: src/ArrangeActAssert/ArrangeActAssert.csproj
           # PACKAGE_NAME: NuGet package id, REQUIRED if it's different from project name
-          VERSION_FILE_PATH: src/Conditions/Conditions.csproj
+          VERSION_FILE_PATH: src/ArrangeActAssert/ArrangeActAssert.csproj
           # VERSION_REGEX: <Version>(.*)<\/Version> # Regex pattern to extract version info in a capturing group
           # VERSION_STATIC: Static version, useful for external providers like Nerdbank.GitVersioning
           # TAG_COMMIT: true # Flag to enable / disable git tagging
