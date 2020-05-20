@@ -2,8 +2,8 @@ name: publish to nuget
 on:
   push:
     branches:
-      #- release/1.x.x # Default release branch
-        - master
+        - release/1.x.x # Default release branch
+        
 jobs:
   publish:
     name: build, pack & push
