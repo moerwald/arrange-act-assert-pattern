@@ -7,7 +7,7 @@ namespace ArrangeActAssert.Test
 {
     public sealed class DefaultTestStepRunner : RunnerBase
     {
-        public override void Invoke()
+        public override void Run()
         {
             InvokeArrangeSteps();
             InvokeActSteps();

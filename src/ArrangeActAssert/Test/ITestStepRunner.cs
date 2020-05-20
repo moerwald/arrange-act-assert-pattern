@@ -5,8 +5,9 @@ using ArrangeActAssert.Test.Invoker;
 
 namespace ArrangeActAssert.Test
 {
-    public interface ITestStepRunner : IInvoke
+    public interface ITestStepRunner 
     {
+        void Run();
         void AddArrange(ArrangeTestStep arrangeTestStep);
         void AddAct(ActTestStep actTestStep);
         void AddAssert(AssertTestStep assertTestStep);

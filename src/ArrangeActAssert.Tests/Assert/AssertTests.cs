@@ -17,7 +17,7 @@ namespace ArrangeActAssert.Tests.Arrange
                             .Arrange(c => { })
                             .Act(x => {})
                             .Assert(x => throw new Exception("Assert failed"))
-                            .Invoke()
+                            .Run()
                             );
         }
 
@@ -29,7 +29,7 @@ namespace ArrangeActAssert.Tests.Arrange
                     .Arrange(c => { })
                     .Act(x => {})
                     .Assert(x => assertStepCalled = true)
-                    .Invoke();
+                    .Run();
 
             Assert.IsTrue(assertStepCalled);
         }

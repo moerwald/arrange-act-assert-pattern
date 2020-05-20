@@ -19,8 +19,6 @@ namespace ArrangeActAssert.Test
 
         public void AddAssert(AssertTestStep assertTestStep) => _assertTestSteps.Add(assertTestStep);
 
-        public abstract void Invoke();
-
         protected void InvokeArrangeSteps() => InvokeSteps(_arrangeTestSteps);
         protected void InvokeActSteps() => InvokeSteps(_actTestSteps);
         protected void InvokeAssertSteps() => InvokeSteps(_assertTestSteps);
@@ -32,5 +30,7 @@ namespace ArrangeActAssert.Test
                 step.Invoke();
             }
         }
+
+        public abstract void Run();
     }
 }
