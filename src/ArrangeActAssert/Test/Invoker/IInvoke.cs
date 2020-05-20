@@ -6,6 +6,6 @@ namespace ArrangeActAssert.Test.Invoker
 {
     public interface IInvoke
     {
-        void Invoke();
+        void Invoke(IInvokeableTestStep testStep);
     }
 }
