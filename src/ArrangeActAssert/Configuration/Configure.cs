@@ -3,7 +3,7 @@ using ArrangeActAssert.Configuration.Time;
 using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
 using ArrangeActAssert.Test.Invoker;
-using LanguageExt;
+using FluentOptionals;
 using System;
 
 namespace ArrangeActAssert.Configuration
@@ -14,7 +14,7 @@ namespace ArrangeActAssert.Configuration
 
         public Configure() { }
 
-        public IConfigure MeasureExecutionTime(Option<IStopwatch> options)
+        public IConfigure MeasureExecutionTime(Optional<IStopwatch> options)
         {
             IStopwatch timer = new StopwatchTimer();
             options.IfSome(t => timer = t);

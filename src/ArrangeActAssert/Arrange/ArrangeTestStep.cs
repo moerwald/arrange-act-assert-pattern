@@ -1,14 +1,14 @@
 ﻿using ArrangeActAssert.Context;
-using LanguageExt;
+using FluentOptionals;
 using System;
 
 namespace ArrangeActAssert.Arrange
 {
     public sealed class ArrangeTestStep : TestStepBase<ArrangeException>
     {
-        private readonly Option<string> _description;
+        private readonly Optional<string> _description;
 
-        public ArrangeTestStep( IContext context, Action<IContext> actionToInvoke, Option<string> description )
+        public ArrangeTestStep( IContext context, Action<IContext> actionToInvoke, Optional<string> description )
             :base(context, actionToInvoke)
         {
             _description = description;
@@ -16,7 +16,7 @@ namespace ArrangeActAssert.Arrange
         public override string GetDescription()
         {
             var result = nameof(ArrangeTestStep);
-            _description.Some(d => result = d);
+            _description.IfSome(d => result = d);
             return result;
         }
 
