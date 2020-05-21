@@ -2,14 +2,11 @@
 
 namespace ArrangeActAssert.Test
 {
-    public class ConfigurableTestStepRunner : RunnerBase
+    public sealed class ConfigurableTestStepRunner : RunnerBase
     {
         private readonly IInvoke _invoker;
 
-        public ConfigurableTestStepRunner(IInvoke invoker)
-        {
-            _invoker = invoker;
-        }
+        public ConfigurableTestStepRunner(IInvoke invoker) => _invoker = invoker; 
 
         public override void Run()
         {
