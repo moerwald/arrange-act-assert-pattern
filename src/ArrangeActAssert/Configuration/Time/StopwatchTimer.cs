@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ArrangeActAssert.Configuration.Time
 {
-    public class StopwatchTimer : IStopwatch
+    public sealed class StopwatchTimer : IStopwatch
     {
         private Stopwatch _stopwatch = new Stopwatch();
         public void Start() => _stopwatch.Start();
