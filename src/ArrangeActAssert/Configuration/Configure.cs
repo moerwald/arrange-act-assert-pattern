@@ -14,12 +14,14 @@ namespace ArrangeActAssert.Configuration
 
         public Configure() { }
 
-        public IConfigure MeasureExecutionTime()
+        public IConfigure MeasureExecutionTime(Option<IStopwatch> options)
         {
-            _buildInvokeChain.Add(new StopWatchInvoker(new StopwatchTimer()));
+            IStopwatch timer = new StopwatchTimer();
+            options.IfSome(t => timer = t);
+            _buildInvokeChain.Add(new StopWatchInvoker(timer));
             return this;
         }
 
-        public IArrange New => new ArrangeWithContext(new DefaultContext(), new ConfigurableTestStepRunner(_buildInvokeChain.Head));
+        public IArrange New => new ArrangeWithContext(new DefaultContext(), new ConfigurableTestStepRunner(_buildInvokeChain.Root));
     }
 }
