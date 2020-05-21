@@ -2,7 +2,7 @@
 
 namespace ArrangeActAssert.Test.Invoker
 {
-    public abstract class InvokeBase : IInvoke
+    public abstract class ChainableInvoke : IInvoke
     {
         private Optional<IInvoke> _nextInvoker = Optional.None<IInvoke>();
 

@@ -4,7 +4,7 @@ using System;
 namespace ArrangeActAssert.Test.Invoker
 {
 
-    public class StopWatchInvoker : InvokeBase
+    public class StopWatchInvoker : ChainableInvoke
     {
 
         private readonly IStopwatch _stopwatch;
