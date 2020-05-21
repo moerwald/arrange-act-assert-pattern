@@ -1,48 +1,50 @@
 ﻿using ArrangeActAssert.Configuration.Time;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Moq;
 using LanguageExt;
+using ArrangeActAssert.Arrange;
 
 namespace ArrangeActAssert.Tests.Configuration
 {
     [TestFixture]
     public class MeasureExecutionTimeTests
     {
+        private Mock<IStopwatch> _stopWatchMock;
+        private IArrange _pattern;
+
+        [SetUp]
+        public void Setup()
+        {
+            _stopWatchMock = new Mock<IStopwatch>();
+            _pattern = Pattern.Configure.MeasureExecutionTime(Option<IStopwatch>.Some(_stopWatchMock.Object)).New;
+        }
+
         [Test]
         public void MeasureExecutionTime_StopWatchRestartMethodIsCalled()
         {
-            Mock<IStopwatch> stopWatchMock = new Mock<IStopwatch>();
-            var pattern = Pattern.Configure.MeasureExecutionTime(Option<IStopwatch>.Some(stopWatchMock.Object)).New;
+            RunDefaultPattern();
 
-            pattern.Arrange(ctx => { }).Act(ctx => { }).Assert(ctx => { }).Run();
-
-            stopWatchMock.Verify(stopWatch => stopWatch.ReStart(), Times.Exactly(3));
+            _stopWatchMock.Verify(stopWatch => stopWatch.ReStart(), Times.Exactly(3));
         }
 
         [Test]
         public void MeasureExecutionTime_StopWatchStopMethodIsCalled()
         {
-            Mock<IStopwatch> stopWatchMock = new Mock<IStopwatch>();
-            var pattern = Pattern.Configure.MeasureExecutionTime(Option<IStopwatch>.Some(stopWatchMock.Object)).New;
+            RunDefaultPattern();
 
-            pattern.Arrange(ctx => { }).Act(ctx => { }).Assert(ctx => { }).Run();
-
-            stopWatchMock.Verify(stopWatch => stopWatch.Stop(), Times.Exactly(3));
+            _stopWatchMock.Verify(stopWatch => stopWatch.Stop(), Times.Exactly(3));
         }
 
         [Test]
         public void MeasureExecutionTime_StopWatchEllapsedMethodIsCalled()
         {
-            Mock<IStopwatch> stopWatchMock = new Mock<IStopwatch>();
-            var pattern = Pattern.Configure.MeasureExecutionTime(Option<IStopwatch>.Some(stopWatchMock.Object)).New;
+            RunDefaultPattern();
 
-            pattern.Arrange(ctx => { }).Act(ctx => { }).Assert(ctx => { }).Run();
-
-            stopWatchMock.Verify(stopWatch => stopWatch.Elapsed(), Times.Exactly(3));
+            _stopWatchMock.Verify(stopWatch => stopWatch.Elapsed(), Times.Exactly(3));
         }
+
+        private void RunDefaultPattern() =>
+            _pattern.Arrange(ctx => { }).Act(ctx => { }).Assert(ctx => { }).Run();
 
     }
 }
