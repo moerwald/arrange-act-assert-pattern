@@ -1,11 +1,10 @@
-﻿using LanguageExt;
-using System;
+﻿using FluentOptionals;
 
 namespace ArrangeActAssert.Test.Invoker
 {
     public abstract class InvokeBase : IInvoke
     {
-        private Option<IInvoke> _nextInvoker = Option<IInvoke>.None;
+        private Optional<IInvoke> _nextInvoker = Optional.None<IInvoke>();
 
         public void Invoke(IInvokeableTestStep testStep)
         {
@@ -23,7 +22,7 @@ namespace ArrangeActAssert.Test.Invoker
 
         public void SetNext(IInvoke nextInvoker)
         {
-            _nextInvoker = Option<IInvoke>.Some(nextInvoker);
+            _nextInvoker = Optional.Some<IInvoke>(nextInvoker);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using ArrangeActAssert.Asrt;
 using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
-using LanguageExt;
+using FluentOptionals;
 using System;
 
 namespace ArrangeActAssert.Act
@@ -19,7 +19,7 @@ namespace ArrangeActAssert.Act
 
         public IAssert Act(Action<IContext> action)
         {
-            _runner.AddAct(new ActTestStep(_context, action, Option<string>.None));
+            _runner.AddAct(new ActTestStep(_context, action, Optional.None<string>()));
             return new AssertWithContext(_context, _runner);
         }
     }
