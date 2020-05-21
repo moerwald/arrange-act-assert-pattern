@@ -1,5 +1,6 @@
 ﻿using ArrangeActAssert.Context;
 using ArrangeActAssert.Test;
+using LanguageExt;
 using System;
 
 namespace ArrangeActAssert.Asrt
@@ -18,7 +19,7 @@ namespace ArrangeActAssert.Asrt
 
         public ITestStepRunner Assert(Action<IContext> action)
         {
-            _runner.AddAssert(new AssertTestStep(_context, action));
+            _runner.AddAssert(new AssertTestStep(_context, action, Option<string>.None));
             return _runner;
         }
     }

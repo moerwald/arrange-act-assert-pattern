@@ -7,5 +7,7 @@ namespace ArrangeActAssert.Test
     public interface IInvokeableTestStep
     {
         void Invoke();
+
+        string GetDescription();
     }
 }

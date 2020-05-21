@@ -27,7 +27,7 @@ namespace ArrangeActAssert.Tests.TestStepRunner
                 {
                 }
                 )
-                .Invoke();
+                .Run();
 
             Assert.IsTrue(arrange);
         }
@@ -53,7 +53,7 @@ namespace ArrangeActAssert.Tests.TestStepRunner
                 {
                 }
                 )
-                .Invoke();
+                .Run();
 
             Assert.IsTrue(act);
         }
@@ -79,7 +79,7 @@ namespace ArrangeActAssert.Tests.TestStepRunner
                     assert = true;
                 }
                 )
-                .Invoke();
+                .Run();
 
             Assert.IsTrue(assert);
         }
