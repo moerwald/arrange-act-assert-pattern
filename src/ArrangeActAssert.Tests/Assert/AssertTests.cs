@@ -1,4 +1,3 @@
-
 using ArrangeActAssert.Asrt;
 using NUnit.Framework;
 using System;
@@ -33,6 +32,5 @@ namespace ArrangeActAssert.Tests.Arrange
 
             Assert.IsTrue(assertStepCalled);
         }
-
     }
 }

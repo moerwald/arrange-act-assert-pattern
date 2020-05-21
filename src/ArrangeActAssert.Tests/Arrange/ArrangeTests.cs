@@ -32,6 +32,5 @@ namespace ArrangeActAssert.Tests.Arrange
 
             Assert.IsTrue(arrangeStepCalled);
         }
-
     }
 }
