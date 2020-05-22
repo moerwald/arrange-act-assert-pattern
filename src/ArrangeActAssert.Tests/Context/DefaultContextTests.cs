@@ -48,5 +48,14 @@ namespace ArrangeActAssert.Tests.Context
             ctx.SetSystemUnderTest("System under Test");
             Assert.AreEqual("System under Test", ctx.GetSystemUnderTest<string>());
         }
+
+        [Test]
+        public void GetSystemUnderTest_SutWasNOTSetBeforehand_ThrowInvalidArgumentException()
+        {
+            var ctx = new DefaultContext();
+            Assert.Throws<ArgumentException>(
+                () => ctx.GetSystemUnderTest<string>()
+                );
+        }
     }
 }
