@@ -59,5 +59,14 @@ namespace ArrangeActAssert.Tests.Context
                 () => _ctx.GetSystemUnderTest<string>()
                 );
         }
+
+        [Test]
+        public void SetSystemUnderTest_SutWasSetBeforehand_ThrowInvalidOperationException()
+        {
+            _ctx.SetSystemUnderTest("System under Test");
+            Assert.Throws<InvalidOperationException>(
+                () => _ctx.SetSystemUnderTest("Some other System under Test")
+                );
+        }
     }
 }
