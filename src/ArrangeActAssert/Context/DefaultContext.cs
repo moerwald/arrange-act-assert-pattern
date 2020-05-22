@@ -31,5 +31,17 @@ namespace ArrangeActAssert.Context
 
             return (T)value;
         }
+
+        public T GetSystemUnderTest<T>() => Get<T>("SUT");
+
+        public void SetSystemUnderTest<T>(T systemUnderTest)
+        {
+            if (_parameters.ContainsKey("SUT"))
+            {
+                throw new InvalidOperationException("System under test already set. Only ONE system under test allowed!");
+            }
+
+            Add<T>("SUT", systemUnderTest);
+        }
     }
 }
