@@ -31,5 +31,9 @@ namespace ArrangeActAssert.Context
 
             return (T)value;
         }
+
+        public T GetSystemUnderTest<T>() => Get<T>("SUT");
+
+        public void SetSystemUnderTest<T>(T systemUnderTest) => Add<T>("SUT", systemUnderTest);
     }
 }

@@ -40,5 +40,13 @@ namespace ArrangeActAssert.Tests.Context
             ctx.Add("a", 1);
             Assert.AreEqual(1, ctx.Get<int>("a"));
         }
+
+        [Test]
+        public void GetSystemUnderTest_SutWasSetBeforehand_CorrectValueIsReturned()
+        {
+            var ctx = new DefaultContext();
+            ctx.SetSystemUnderTest("System under Test");
+            Assert.AreEqual("System under Test", ctx.GetSystemUnderTest<string>());
+        }
     }
 }
