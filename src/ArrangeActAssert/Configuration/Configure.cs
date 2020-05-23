@@ -1,6 +1,6 @@
 ﻿using ArrangeActAssert.Arrange;
-using ArrangeActAssert.Configuration.Time;
 using ArrangeActAssert.Context;
+using ArrangeActAssert.Environment.Time;
 using ArrangeActAssert.Test;
 using ArrangeActAssert.Test.Invoker;
 using FluentOptionals;

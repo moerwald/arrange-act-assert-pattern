@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace ArrangeActAssert.Configuration.Time
+namespace ArrangeActAssert.Environment.Time
 {
     public sealed class StopwatchTimer : IStopwatch
     {

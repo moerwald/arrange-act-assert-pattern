@@ -1,4 +1,4 @@
-﻿using ArrangeActAssert.Configuration.Time;
+﻿using ArrangeActAssert.Environment.Time;
 using System;
 
 namespace ArrangeActAssert.Test.Invoker

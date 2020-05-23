@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArrangeActAssert.Configuration.Time
+namespace ArrangeActAssert.Environment.Time
 {
     public interface IStopwatch
     {

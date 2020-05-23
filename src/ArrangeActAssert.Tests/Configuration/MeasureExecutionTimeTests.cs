@@ -1,8 +1,8 @@
-﻿using ArrangeActAssert.Configuration.Time;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Moq;
 using ArrangeActAssert.Arrange;
 using FluentOptionals;
+using ArrangeActAssert.Environment.Time;
 
 namespace ArrangeActAssert.Tests.Configuration
 {
