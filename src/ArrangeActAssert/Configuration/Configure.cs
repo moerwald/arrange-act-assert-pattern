@@ -10,7 +10,7 @@ namespace ArrangeActAssert.Configuration
 {
     public class Configure : IConfigure
     {
-        private BuildInvokeList _buildInvokeChain = new BuildInvokeList();
+        private InvokeList _buildInvokeChain = new InvokeList();
 
         public Configure() { }
 
