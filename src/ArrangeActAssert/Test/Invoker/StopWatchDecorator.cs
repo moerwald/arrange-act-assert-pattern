@@ -4,12 +4,12 @@ using System;
 namespace ArrangeActAssert.Test.Invoker
 {
 
-    public class StopWatchInvoker : ChainableInvoke
+    public class StopWatchDecorator : ChainableInvoke
     {
 
         private readonly IStopwatch _stopwatch;
 
-        public StopWatchInvoker(IStopwatch stopwatch)
+        public StopWatchDecorator(IStopwatch stopwatch)
         {
             _stopwatch = stopwatch;
         }

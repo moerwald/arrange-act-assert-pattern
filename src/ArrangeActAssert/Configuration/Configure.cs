@@ -18,7 +18,7 @@ namespace ArrangeActAssert.Configuration
         {
             IStopwatch timer = new StopwatchTimer();
             options.IfSome(t => timer = t);
-            _buildInvokeChain.Add(new StopWatchInvoker(timer));
+            _buildInvokeChain.Add(new StopWatchDecorator(timer));
             return this;
         }
 
