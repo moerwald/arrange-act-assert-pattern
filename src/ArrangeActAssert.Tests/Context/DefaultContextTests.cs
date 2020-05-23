@@ -22,6 +22,13 @@ namespace ArrangeActAssert.Tests.Context
         }
 
         [Test]
+        public void Add_ParameterAlreadyAdded_ThrowIvalidOperationException()
+        {
+            _ctx.Add("someName", 1);
+            Assert.Throws<ArgumentException>(() => _ctx.Add("someName", 1));
+        }
+
+        [Test]
         public void Get_ParmeterNotFound_ThrowInvalidArgumentException()
         {
             Assert.Throws<ArgumentException>(
@@ -64,7 +71,7 @@ namespace ArrangeActAssert.Tests.Context
         public void SetSystemUnderTest_SutWasSetBeforehand_ThrowInvalidOperationException()
         {
             _ctx.SetSystemUnderTest("System under Test");
-            Assert.Throws<InvalidOperationException>(
+            Assert.Throws<ArgumentException>(
                 () => _ctx.SetSystemUnderTest("Some other System under Test")
                 );
         }

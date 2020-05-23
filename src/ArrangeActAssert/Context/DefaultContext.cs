@@ -13,7 +13,7 @@ namespace ArrangeActAssert.Context
 
         public void Add<T>(string name, T value)
         {
-            _parameters[name] = (value, typeof(T));
+            _parameters.Add(name, (value, typeof(T)));
         }
 
         public T Get<T>(string name)
@@ -36,11 +36,6 @@ namespace ArrangeActAssert.Context
 
         public void SetSystemUnderTest<T>(T systemUnderTest)
         {
-            if (_parameters.ContainsKey("SUT"))
-            {
-                throw new InvalidOperationException("System under test already set. Only ONE system under test allowed!");
-            }
-
             Add<T>("SUT", systemUnderTest);
         }
     }
