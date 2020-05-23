@@ -1,8 +1,9 @@
 ﻿namespace ArrangeActAssert.Test.Invoker
 {
-    public interface IInvoke
+    public interface IInvokeDecorator
     {
         void Invoke(IInvokeableTestStep testStep);
-        void SetNext(IInvoke nextInvoker);
+
+        void SetNext(IInvokeDecorator nextInvoker);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace ArrangeActAssert.Test.Invoker
 {
-    public abstract class ChainableInvoke : IInvoke
+    public abstract class ChainableInvoke : IInvokeDecorator
     {
-        private Optional<IInvoke> _nextInvoker = Optional.None<IInvoke>();
+        private Optional<IInvokeDecorator> _nextInvoker = Optional.None<IInvokeDecorator>();
 
         public void Invoke(IInvokeableTestStep testStep)
         {
@@ -20,9 +20,9 @@ namespace ArrangeActAssert.Test.Invoker
 
         protected abstract void BeforeInvoke(IInvokeableTestStep testStep);
 
-        public void SetNext(IInvoke nextInvoker)
+        public void SetNext(IInvokeDecorator nextInvoker)
         {
-            _nextInvoker = Optional.Some<IInvoke>(nextInvoker);
+            _nextInvoker = Optional.Some<IInvokeDecorator>(nextInvoker);
         }
     }
 }
