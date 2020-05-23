@@ -1,9 +1,7 @@
 ﻿using ArrangeActAssert.Act;
 using ArrangeActAssert.Arrange;
 using ArrangeActAssert.Asrt;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ArrangeActAssert.Test
 {
