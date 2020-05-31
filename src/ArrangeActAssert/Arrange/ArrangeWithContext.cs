@@ -11,15 +11,17 @@ namespace ArrangeActAssert.Arrange
         private IContext _context;
         private readonly ITestStepRunner _runner;
 
-        public ArrangeWithContext(IContext context, ITestStepRunner runner)
+        internal ArrangeWithContext(IContext context, ITestStepRunner runner)
         {
             _context = context;
             _runner = runner;
         }
 
-        public IAct Arrange(Action<IContext> actionToInvoke)
+        public IAct Arrange(Action<IContext> actionToInvoke) => Arrange(actionToInvoke, null);
+
+        public IAct Arrange(Action<IContext> actionToInvoke, string stepName)
         {
-            _runner.AddArrange(new ArrangeTestStep(_context, actionToInvoke, Optional.None<string>()));
+            _runner.AddArrange(new ArrangeTestStep(_context, actionToInvoke, Optional.From<string>(stepName)));
             return new ActWithContext(_context, _runner);
         }
     }
