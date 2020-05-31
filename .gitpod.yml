@@ -4,3 +4,7 @@ image:
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
 ports:
 - port: 3000
+
+vscode:
+  extensions:
+    - ms-dotnettools.csharp@1.22.0:H/UU3ezplPBgjaLNwtevwA==
