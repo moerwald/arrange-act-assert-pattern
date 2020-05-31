@@ -4,23 +4,27 @@ using ArrangeActAssert.Environment.Time;
 using ArrangeActAssert.Test;
 using ArrangeActAssert.Test.Invoker;
 using FluentOptionals;
-using System;
 
 namespace ArrangeActAssert.Configuration
 {
     public class Configure : IConfigure
     {
-        private InvokeList _buildInvokeChain = new InvokeList();
+        private readonly InvokeList _buildInvokeChain = new InvokeList();
 
-        public Configure() { }
-
-        public IConfigure MeasureExecutionTime(Optional<IStopwatch> options)
+        private IConfigure MeasureExecutionTime(Optional<IStopwatch> options)
         {
-            IStopwatch timer = new StopwatchTimer();
-            options.IfSome(t => timer = t);
-            _buildInvokeChain.Add(new StopWatchDecorator(timer));
+            _buildInvokeChain.Add(
+                new StopWatchDecorator( 
+                        options.ValueOr( new StopwatchTimer()
+                        )
+                    )
+                );
             return this;
         }
+
+        public IConfigure MeasureExecutionTime() => MeasureExecutionTime(Optional.None<IStopwatch>());
+
+        public IConfigure MeasureExecutionTime(IStopwatch stopwatch) => MeasureExecutionTime(Optional.From(stopwatch));
 
         public IArrange New => new ArrangeWithContext(new DefaultContext(), new ConfigurableTestStepRunner(_buildInvokeChain.Root));
     }

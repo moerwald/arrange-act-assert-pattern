@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using Moq;
 using ArrangeActAssert.Arrange;
-using FluentOptionals;
 using ArrangeActAssert.Environment.Time;
 
 namespace ArrangeActAssert.Tests.Configuration
@@ -16,7 +15,7 @@ namespace ArrangeActAssert.Tests.Configuration
         public void Setup()
         {
             _stopWatchMock = new Mock<IStopwatch>();
-            _pattern = Pattern.Configure.MeasureExecutionTime(Optional.Some<IStopwatch>(_stopWatchMock.Object)).New;
+            _pattern = Pattern.Configure.MeasureExecutionTime(_stopWatchMock.Object).New;
         }
 
         [Test]
