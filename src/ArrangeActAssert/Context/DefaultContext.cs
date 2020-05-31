@@ -5,7 +5,7 @@ namespace ArrangeActAssert.Context
 {
     public sealed class DefaultContext  : IContext
     {
-        Dictionary<string, (object, Type)> _parameters = new Dictionary<string, (object, Type)>();
+        private readonly Dictionary<string, (object, Type)> _parameters = new Dictionary<string, (object, Type)>();
 
         public DefaultContext()
         {
