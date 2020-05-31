@@ -22,5 +22,11 @@ namespace ArrangeActAssert.Asrt
             _runner.AddAssert(new AssertTestStep(_context, action, Optional.None<string>()));
             return _runner;
         }
+
+        public ITestStepRunner Assert(Action<IContext> action, string stepName)
+        {
+            _runner.AddAssert(new AssertTestStep(_context, action, Optional.From<string>(stepName)));
+            return _runner;
+        }
     }
 }
