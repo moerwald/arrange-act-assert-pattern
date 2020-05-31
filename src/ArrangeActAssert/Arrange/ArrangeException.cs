@@ -8,7 +8,7 @@ namespace ArrangeActAssert.Arrange
         public ArrangeException() { }
         public ArrangeException(string message) : base(message) { }
         public ArrangeException(string message, Exception inner) : base(message, inner) { }
-        protected ArrangeException(
+        public ArrangeException(
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
     }
