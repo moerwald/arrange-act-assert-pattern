@@ -38,23 +38,15 @@ namespace ArrangeActAssert.Tests.ShowCases
             int a = 0;
             int b = 0;
             int result = 0;
-            Pattern.Configure
-                     .MeasureExecutionTime()
-                     .New
-                     .Arrange(ctx =>
-                     {
-                         a = 1;
-                         b = 2;
-                     })
-                     .Act(ctx =>
-                     {
-                         result = a + b;
-                     })
-                     .Assert(ctx =>
-                     {
-                         Assert.AreEqual(3, result);
-                     })
-                     .Run();
+            Pattern.New
+                   .Arrange(ctx =>
+                   {
+                       a = 1;
+                       b = 2;
+                   })
+                   .Act(ctx => result = a + b)
+                   .Assert(ctx => Assert.AreEqual(3, result))
+                   .Run();
         }
 
         [Test]
