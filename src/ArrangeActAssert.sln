@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrangeActAssert", "Arrange
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrangeActAssert.Tests", "ArrangeActAssert.Tests\ArrangeActAssert.Tests.csproj", "{EF92AEE3-1146-467A-81C2-02026D2F3A09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrangeActAssert.ShowCases.Tests", "ArrangeActAssert.ShowCases.Tests\ArrangeActAssert.ShowCases.Tests.csproj", "{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{EF92AEE3-1146-467A-81C2-02026D2F3A09}.Release|x64.Build.0 = Release|Any CPU
 		{EF92AEE3-1146-467A-81C2-02026D2F3A09}.Release|x86.ActiveCfg = Release|Any CPU
 		{EF92AEE3-1146-467A-81C2-02026D2F3A09}.Release|x86.Build.0 = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|x64.Build.0 = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Debug|x86.Build.0 = Debug|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|x64.ActiveCfg = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|x64.Build.0 = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|x86.ActiveCfg = Release|Any CPU
+		{38E6485D-FFA7-4BD7-97E2-00BC474B3ADD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
