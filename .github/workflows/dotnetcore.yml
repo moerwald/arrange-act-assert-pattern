@@ -23,3 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore src/ArrangeActAssert.sln
     - name: Test
       run: dotnet test --no-restore --verbosity normal src/ArrangeActAssert.sln
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.2
+      with:
+        # Set the sonar.projectBaseDir analysis property
+        projectBaseDir: src
