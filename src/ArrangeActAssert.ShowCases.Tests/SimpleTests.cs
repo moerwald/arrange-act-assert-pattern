@@ -16,7 +16,7 @@ namespace ArrangeActAssert.Tests.ShowCases
                       {
                           ctx.Add("a", 1);
                           ctx.Add("b", 2);
-                      })
+                      }, "Prepare variables for addition")
                       .Act(ctx =>
                       {
                           var a = ctx.Get<int>("a");
@@ -24,12 +24,12 @@ namespace ArrangeActAssert.Tests.ShowCases
                           var result = a + b;
 
                           ctx.Add("result", result);
-                      })
+                      }, "Add variables")
                       .Assert(ctx =>
                       {
                           var result = ctx.Get<int>("result");
                           Assert.AreEqual(3, result);
-                      })
+                      }, "Check if addition succeeded")
                       .Run();
 
         [Test]
