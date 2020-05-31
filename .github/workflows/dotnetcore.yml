@@ -23,6 +23,11 @@ jobs:
       run: dotnet build --configuration Release --no-restore src/ArrangeActAssert.sln
     - name: Test
       run: dotnet test --no-restore --verbosity normal src/ArrangeActAssert.sln
+      
+  code_quality:
+    runs-on: ubuntu-latest
+
+    steps:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.2
       with:
