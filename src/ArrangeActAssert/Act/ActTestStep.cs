@@ -20,7 +20,7 @@ namespace ArrangeActAssert.Act
             _description.IfSome(d => result = d);
             return result;
         }
-        protected override ActException GetException(Exception innerException)
+        protected override ActException Convert(Exception innerException)
         {
             return new ActException($"[Act] failed with exception {innerException.GetType()}", innerException);
 

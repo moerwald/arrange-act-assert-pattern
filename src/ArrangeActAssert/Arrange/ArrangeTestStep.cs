@@ -20,7 +20,7 @@ namespace ArrangeActAssert.Arrange
             return result;
         }
 
-        protected override ArrangeException GetException(Exception innerException)
+        protected override ArrangeException Convert(Exception innerException)
             => new ArrangeException($"[Arrange] failed with exception {innerException.GetType()}", innerException);
     }
 }

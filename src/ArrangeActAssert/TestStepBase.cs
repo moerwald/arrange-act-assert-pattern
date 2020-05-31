@@ -26,11 +26,11 @@ namespace ArrangeActAssert
             }
             catch (Exception exception)
             {
-                throw GetException(exception);
+                throw Convert(exception);
             }
         }
 
-        protected abstract TException GetException(Exception innerException);
+        protected abstract TException Convert(Exception innerException);
         public abstract string GetDescription();
     }
 }
