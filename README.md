@@ -8,7 +8,7 @@ I'm fan of the Arrange-Act-Assert pattern. Test cases may become hard to read if
 
 Here is one simple example performing an addition of two variables:
 
-```
+```cs
  [Test]
         public void AddTwoNumbersUsingClosures()
         {
@@ -48,7 +48,7 @@ Test step run: 20.1121 milliseconds. Test step description: AssertTestStep
 
 Often there is also the problem that test cases break because of exceptions. Sometimes it is not obvious in which phase of the test the exception is thrown. The following example throws an exception in the ACT phase:
 
-```
+```cs
    [Test]
         public void AddTwoNumbersUsingContext_ActThrowException_ExceptionConvertedToActException()
         {
