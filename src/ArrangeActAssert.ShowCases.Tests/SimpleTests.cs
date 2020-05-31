@@ -1,4 +1,5 @@
 ﻿using ArrangeActAssert.Act;
+using ArrangeActAssert.ShowCases.Tests;
 using NUnit.Framework;
 using System;
 
@@ -14,16 +15,18 @@ namespace ArrangeActAssert.Tests.ShowCases
                       .New
                       .Arrange(ctx =>
                       {
-                          ctx.Add("a", 1);
-                          ctx.Add("b", 2);
-                      }, "Prepare variables for addition")
+                          ctx.SetSystemUnderTest(new Addition(1, 2));
+                      }, "Prepare System under Test")
                       .Act(ctx =>
                       {
-                          var a = ctx.Get<int>("a");
+                          var a = ctx.Get<IAddition>("a");
                           var b = ctx.Get<int>("b");
-                          var result = a + b;
+
+                          var sut = ctx.GetSystemUnderTest<IAddition>();
+                          var result = sut.Add();
 
                           ctx.Add("result", result);
+
                       }, "Add variables")
                       .Assert(ctx =>
                       {
