@@ -1,5 +1,6 @@
 ![.NET Core](https://github.com/moerwald/arrange-act-assert-pattern/workflows/.NET%20Core/badge.svg)
 ![publish to nuget](https://github.com/moerwald/arrange-act-assert-pattern/workflows/publish%20to%20nuget/badge.svg?branch=release%2F1.x.x)
+[![BCH compliance](https://bettercodehub.com/edge/badge/moerwald/arrange-act-assert-pattern?branch=master)](https://bettercodehub.com/)
 
 # arrange-act-assert-pattern
 
@@ -9,41 +10,43 @@ I'm fan of the Arrange-Act-Assert pattern. Test cases may become hard to read if
 Here is one simple example performing an addition of two variables:
 
 ```cs
- [Test]
-        public void AddTwoNumbersUsingClosures()
-        {
-            int a = 0;
-            int b = 0;
-            int result = 0;
-            Pattern.Configure
-                     .MeasureExecutionTime()
-                     .New
-                     .Arrange(ctx =>
-                     {
-                         a = 1;
-                         b = 2;
-                     })
-                     .Act(ctx =>
-                     {
-                         result = a + b;
-                     })
-                     .Assert(ctx =>
-                     {
-                         Assert.AreEqual(3, result);
-                     })
-                     .Run();
-        }
+        [Test]
+        public void AddTwoNumbersUsingContext()
+            => Pattern.Configure
+                      .MeasureExecutionTime()
+                      .New
+                      .Arrange(ctx =>
+                      {
+                          ctx.SetSystemUnderTest(new Addition(1, 2));
+                      }, "Prepare System under Test")
+                      .Act(ctx =>
+                      {
+                          var sut = ctx.GetSystemUnderTest<Addition>();
+                          var result = sut.Add();
+
+                          ctx.SetValueToAssert(result);
+
+                      }, "Add variables")
+                      .Assert(ctx =>
+                      {
+                          int result = ctx.GetValueToAssert<int>();
+                          Assert.AreEqual(3, result);
+                      }, "Check if addition succeeded")
+                      .Run();
+
 ```
 
 The output of the testrun looks as:
 
 ```
-Test Name:	AddTwoNumbersUsingClosures
+Test Name:	AddTwoNumbersUsingContext
 Test Outcome:	Passed
 Result StandardOutput:	
-Test step run: 1.2538 milliseconds. Test step description: ArrangeTestStep
-Test step run: 0.1927 milliseconds. Test step description: ActTestStep
-Test step run: 20.1121 milliseconds. Test step description: AssertTestStep
+Test step run: 2.5684 milliseconds. Test step description: Prepare System under Test
+Test step run: 2.2287 milliseconds. Test step description: Add variables
+Test step run: 0.4649 milliseconds. Test step description: Check if addition succeeded
+
+
 ```
 
 Often there is also the problem that test cases break because of exceptions. Sometimes it is not obvious in which phase of the test the exception is thrown. The following example throws an exception in the ACT phase:
