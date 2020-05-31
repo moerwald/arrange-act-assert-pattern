@@ -1,6 +1,8 @@
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-dotnet:latest
 
-USER gitpod
+# FROM gitpod/workspace-full:latest
+
+# USER gitpod
 
 # Install .NET Core 3.1 SDK binaries on Ubuntu 20.04
 # Source: https://dev.to/carlos487/installing-dotnet-core-in-ubuntu-20-04-6jh
@@ -17,11 +19,11 @@ USER gitpod
  #   fsharp \
  # && sudo rm -rf /var/lib/apt/lists/*
  
-RUN wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
-&& sudo dpkg -i packages-microsoft-prod.deb
+# RUN wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+# && sudo dpkg -i packages-microsoft-prod.deb
 
-RUN sudo add-apt-repository universe -y
-RUN sudo apt-get update -y
-RUN sudo apt-get install apt-transport-https -y
-RUN sudo apt-get update -y
-RUN sudo apt-get install dotnet-sdk-3.1 -y
+# RUN sudo add-apt-repository universe -y
+# RUN sudo apt-get update -y
+# RUN sudo apt-get install apt-transport-https -y
+# RUN sudo apt-get update -y
+# RUN sudo apt-get install dotnet-sdk-3.1 -y
