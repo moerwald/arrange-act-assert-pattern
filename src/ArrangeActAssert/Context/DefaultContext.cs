@@ -20,7 +20,7 @@ namespace ArrangeActAssert.Context
         {
             if (_parameters.ContainsKey(name) == false)
             {
-                throw new ArgumentException($"{name} not found");
+                throw new ArgumentException($" \"{name}\" not found");
             }
 
             (object value, Type type) = _parameters[name];
@@ -34,9 +34,13 @@ namespace ArrangeActAssert.Context
 
         public T GetSystemUnderTest<T>() => Get<T>("SUT");
 
+        public T GetValueToAssert<T>() => Get<T>("ValueToAssert");
+
         public void SetSystemUnderTest<T>(T systemUnderTest)
         {
             Add<T>("SUT", systemUnderTest);
         }
+
+        public void SetValueToAssert<T>(T valueToAssert) => Add<T>("ValueToAssert", valueToAssert);
     }
 }

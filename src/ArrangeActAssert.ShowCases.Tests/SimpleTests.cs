@@ -19,18 +19,15 @@ namespace ArrangeActAssert.Tests.ShowCases
                       }, "Prepare System under Test")
                       .Act(ctx =>
                       {
-                          var a = ctx.Get<IAddition>("a");
-                          var b = ctx.Get<int>("b");
-
-                          var sut = ctx.GetSystemUnderTest<IAddition>();
+                          var sut = ctx.GetSystemUnderTest<Addition>();
                           var result = sut.Add();
 
-                          ctx.Add("result", result);
+                          ctx.SetValueToAssert(result);
 
                       }, "Add variables")
                       .Assert(ctx =>
                       {
-                          var result = ctx.Get<int>("result");
+                          int result = ctx.GetValueToAssert<int>();
                           Assert.AreEqual(3, result);
                       }, "Check if addition succeeded")
                       .Run();

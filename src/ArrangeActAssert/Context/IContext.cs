@@ -6,5 +6,8 @@
         T Get<T>(string name);
         void SetSystemUnderTest<T>(T systemUnderTest);
         T GetSystemUnderTest<T>();
+
+        void SetValueToAssert<T>(T valueToAssert);
+        T GetValueToAssert<T>();
     }
 }
