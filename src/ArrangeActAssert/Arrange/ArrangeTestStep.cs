@@ -21,6 +21,6 @@ namespace ArrangeActAssert.Arrange
         }
 
         protected override ArrangeException GetException(Exception innerException)
-            => new ArrangeException("[Arrange]: failed.", innerException);
+            => new ArrangeException($"[Arrange] failed with exception {innerException.GetType()}", innerException);
     }
 }

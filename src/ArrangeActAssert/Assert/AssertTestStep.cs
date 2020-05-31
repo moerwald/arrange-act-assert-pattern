@@ -22,8 +22,6 @@ namespace ArrangeActAssert.Asrt
         }
 
         protected override AssertException GetException(Exception innerException)
-        {
-            return new AssertException("[Assert] fail.", innerException);
-        }
+            => new AssertException($"[Assert] failed with exception {innerException.GetType()}", innerException);
     }
 }

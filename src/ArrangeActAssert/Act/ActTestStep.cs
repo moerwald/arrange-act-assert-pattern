@@ -22,7 +22,7 @@ namespace ArrangeActAssert.Act
         }
         protected override ActException GetException(Exception innerException)
         {
-            return new ActException("[Act] failed", innerException);
+            return new ActException($"[Act] failed with exception {innerException.GetType()}", innerException);
 
         }
     }
