@@ -17,9 +17,11 @@ namespace ArrangeActAssert.Act
             _runner = runner;
         }
 
-        public IAssert Act(Action<IContext> action)
+        public IAssert Act(Action<IContext> action) => Act(action, null);
+
+        public IAssert Act(Action<IContext> action, string stepName)
         {
-            _runner.AddAct(new ActTestStep(_context, action, Optional.None<string>()));
+            _runner.AddAct(new ActTestStep(_context, action, Optional.From<string>(stepName)));
             return new AssertWithContext(_context, _runner);
         }
     }

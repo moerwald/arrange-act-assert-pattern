@@ -7,5 +7,6 @@ namespace ArrangeActAssert.Act
     public interface IAct
     {
         IAssert Act(Action<IContext> action);
+        IAssert Act(Action<IContext> action, string stepName);
     }
 }
