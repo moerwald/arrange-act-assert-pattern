@@ -9,6 +9,11 @@
     <Description>Fluent lib offering the Arrange-Act-Assert pattern to split up test case in these phases.</Description>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="FluentOptionals" Version="1.1.10.65" />
   </ItemGroup>
