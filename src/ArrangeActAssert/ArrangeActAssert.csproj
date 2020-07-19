@@ -5,7 +5,7 @@
     <PackageProjectUrl>https://github.com/moerwald/arrange-act-assert-pattern</PackageProjectUrl>
     <RepositoryUrl>https://github.com/moerwald/arrange-act-assert-pattern</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <Description>Fluent lib offering the Arrange-Act-Assert pattern to split up test case in these phases.</Description>
   </PropertyGroup>
 
