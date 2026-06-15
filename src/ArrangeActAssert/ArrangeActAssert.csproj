@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentOptionals" Version="2.0.0.95" />
+    <PackageReference Include="FluentOptionals" Version="2.3.0.102" />
   </ItemGroup>
 
 </Project>
