@@ -9,7 +9,7 @@ jobs:
     name: build, pack & push
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Required in case of previous dotnet SDK versions as the host always has latest version installed
       # Visit bit.ly/2synnZl to see the list of SDKs that are pre-installed with ubuntu-latest / windows-latest
